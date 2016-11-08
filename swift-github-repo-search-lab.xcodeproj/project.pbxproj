@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110C62BE1DD102E4008648CB /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C62BD1DD102E4008648CB /* GithubRepo.swift */; };
+		110C62C01DD103A4008648CB /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110C62BF1DD103A4008648CB /* DataStore.swift */; };
+		116310EF1DCA316B00A04F7C /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116310EE1DCA316B00A04F7C /* GithubAPIClient.swift */; };
+		116310F11DCA319E00A04F7C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116310F01DCA319E00A04F7C /* MainStoryboard.storyboard */; };
 		1B15A1391DC29F9D00B15C9F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15A1381DC29F9D00B15C9F /* Secrets.swift */; };
 		1B15A13D1DC2A09900B15C9F /* not_starred.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B15A13B1DC2A09900B15C9F /* not_starred.json */; };
 		1B15A13E1DC2A09900B15C9F /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B15A13C1DC2A09900B15C9F /* repositories.json */; };
@@ -19,6 +23,10 @@
 
 /* Begin PBXFileReference section */
 		06179FC97D4CCA9AF9531AF7 /* Pods-swift-github-repo-search-lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-github-repo-search-lab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-github-repo-search-lab/Pods-swift-github-repo-search-lab.debug.xcconfig"; sourceTree = "<group>"; };
+		110C62BD1DD102E4008648CB /* GithubRepo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
+		110C62BF1DD103A4008648CB /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		116310EE1DCA316B00A04F7C /* GithubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPIClient.swift; sourceTree = "<group>"; };
+		116310F01DCA319E00A04F7C /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1B15A1381DC29F9D00B15C9F /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		1B15A13B1DC2A09900B15C9F /* not_starred.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = not_starred.json; sourceTree = "<group>"; };
 		1B15A13C1DC2A09900B15C9F /* repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repositories.json; sourceTree = "<group>"; };
@@ -88,6 +96,10 @@
 				1BF884A71DBE950C001E9E9B /* AppDelegate.swift */,
 				1BF884A91DBE950C001E9E9B /* ViewController.swift */,
 				1B15A1381DC29F9D00B15C9F /* Secrets.swift */,
+				116310EE1DCA316B00A04F7C /* GithubAPIClient.swift */,
+				110C62BD1DD102E4008648CB /* GithubRepo.swift */,
+				110C62BF1DD103A4008648CB /* DataStore.swift */,
+				116310F01DCA319E00A04F7C /* MainStoryboard.storyboard */,
 				1B15A13A1DC29FA500B15C9F /* Resources */,
 			);
 			path = "swift-github-repo-search-lab";
@@ -132,12 +144,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Flatiron School";
 				TargetAttributes = {
 					1BF884A31DBE950C001E9E9B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = KXY9EDFTF5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -166,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BF884B21DBE950C001E9E9B /* LaunchScreen.storyboard in Resources */,
+				116310F11DCA319E00A04F7C /* MainStoryboard.storyboard in Resources */,
 				1B15A13E1DC2A09900B15C9F /* repositories.json in Resources */,
 				1BF884AF1DBE950C001E9E9B /* Assets.xcassets in Resources */,
 				1B15A13D1DC2A09900B15C9F /* not_starred.json in Resources */,
@@ -187,7 +199,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DF305EFCFAE7C62AFBB444A8 /* [CP] Embed Pods Frameworks */ = {
@@ -227,7 +239,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				116310EF1DCA316B00A04F7C /* GithubAPIClient.swift in Sources */,
+				110C62C01DD103A4008648CB /* DataStore.swift in Sources */,
 				1BF884AA1DBE950C001E9E9B /* ViewController.swift in Sources */,
+				110C62BE1DD102E4008648CB /* GithubRepo.swift in Sources */,
 				1B15A1391DC29F9D00B15C9F /* Secrets.swift in Sources */,
 				1BF884A81DBE950C001E9E9B /* AppDelegate.swift in Sources */,
 			);
@@ -265,6 +280,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -315,6 +331,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -344,8 +361,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06179FC97D4CCA9AF9531AF7 /* Pods-swift-github-repo-search-lab.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KXY9EDFTF5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "swift-github-repo-search-lab/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FlatironSchool.WeatherAnimations.swift-github-repo-search-lab";
@@ -358,8 +376,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA7C84CC2EF21A27A02CA364 /* Pods-swift-github-repo-search-lab.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = KXY9EDFTF5;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "swift-github-repo-search-lab/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.FlatironSchool.WeatherAnimations.swift-github-repo-search-lab";

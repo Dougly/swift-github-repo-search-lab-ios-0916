@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oqq-xd-ZxU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="scc-0I-VZG">
+            <objects>
+                <viewController id="Oqq-xd-ZxU" customClass="TableViewController" customModule="swift_github_repo_search_lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zOT-18-c3X"/>
+                        <viewControllerLayoutGuide type="bottom" id="5OO-Vk-XWM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="roF-dw-bhf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wT5-W4-sYO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="34"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="BZQ-js-WLt"/>
+                                    <barButtonItem width="15" style="plain" systemItem="search" id="kPb-IT-RgY">
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="Oqq-xd-ZxU" id="8k7-mC-ZEl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kfA-X6-flr">
+                                <rect key="frame" x="0.0" y="54" width="375" height="613"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="repoCell" id="LMB-gJ-If2">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LMB-gJ-If2" id="cFP-eo-Kb8">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wT5-W4-sYO" firstAttribute="height" secondItem="roF-dw-bhf" secondAttribute="height" multiplier="0.05" id="Ggt-mT-Hdj"/>
+                            <constraint firstItem="wT5-W4-sYO" firstAttribute="top" secondItem="zOT-18-c3X" secondAttribute="bottom" symbolic="YES" id="Vye-3L-cml"/>
+                            <constraint firstItem="wT5-W4-sYO" firstAttribute="width" secondItem="roF-dw-bhf" secondAttribute="width" id="aOc-Zr-K1t"/>
+                            <constraint firstItem="kfA-X6-flr" firstAttribute="trailing" secondItem="roF-dw-bhf" secondAttribute="trailing" id="cXb-kl-2h6"/>
+                            <constraint firstItem="wT5-W4-sYO" firstAttribute="centerX" secondItem="roF-dw-bhf" secondAttribute="centerX" id="e3Y-sr-E66"/>
+                            <constraint firstItem="kfA-X6-flr" firstAttribute="leading" secondItem="roF-dw-bhf" secondAttribute="leading" id="u2d-EN-Qqx"/>
+                            <constraint firstItem="kfA-X6-flr" firstAttribute="bottom" secondItem="5OO-Vk-XWM" secondAttribute="top" id="vHl-la-iO0"/>
+                            <constraint firstItem="kfA-X6-flr" firstAttribute="top" secondItem="wT5-W4-sYO" secondAttribute="bottom" id="wJu-Pj-Ryn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="kfA-X6-flr" id="y5O-46-yUh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RuP-aH-NOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="754.39999999999998" y="151.57421289355324"/>
+        </scene>
+    </scenes>
+</document>
